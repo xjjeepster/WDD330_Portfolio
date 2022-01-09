@@ -1,6 +1,6 @@
 const links = [{
     label: 'Week 1 Notes',
-    url: 'week01/week1.html',
+    url: 'Week01/week1.html',
 }];
 
 const ol = document.getElementById('assignments');
