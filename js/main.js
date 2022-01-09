@@ -1,11 +1,17 @@
-let onclick = document.querySelector('#listControl');
-onclick.addEventListener('click', menuListControl);
+const links = [{
+    label: 'Week 1 Notes',
+    url: 'week01/week1.html',
+}];
 
-function menuListControl() {
-    let menu = document.querySelector(".weeklinks");
-    if (menu.getElementsByClassName.display === "block") {
-        menu.getElementsByClassName.display = "none";
-    } else {
-        menu.style.display = "block";
-    }
-}
+const ol = document.getElementById('assignments');
+
+links.forEach(link => {
+    let li = document.createElement('li');
+    let a = document.createElement('a');
+
+    a.setAttribute('href', link.url);
+    a.innerText = link.label;
+
+    li.appendChild(a);
+    ol.appendChild(li);
+});
