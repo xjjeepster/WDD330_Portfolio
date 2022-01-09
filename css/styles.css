@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Ma+Shan+Zheng|Pacifico|Roboto+Slab&display=swap');
+
+.content {
+    max-width: 760px;
+    margin: auto;
+    background: white;
+    padding: 10px
+}
+
+header,
+main,
+footer {
+    max-width: 760px;
+}
+
+h1 {
+    font-size: .75em;
+    padding-bottom: .5em;
+}
+
+header,
+footer {
+    background-color: #457B9D;
+    font-family: 'Pacifico', cursive;
+    color: #F1FAEE;
+    text-align: center;
+}
+
+header {
+    font-size: 50px;
+}
+
+main {
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+}
+
+footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+img {
+    margin: 15px 15px 0px 0px;
+    color: blue;
+    width: 175px;
+}
+
+.line1 {
+    font-size: 15px;
+}
+
+.line1 a {
+    color: lightskyblue;
+}
+
+.line2 {
+    font-size: 13px;
+    color: rgba(250, 225, 3, 0.925);
+    font-family: 'Roboto Slab', serif;
+}
