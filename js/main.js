@@ -3,6 +3,15 @@ const links = [{
     url: 'week1/week1.html',
 }];
 
+const links = [{
+    label: 'Week 2 Notes',
+    url: 'week2/week2.html',
+}];
+
+const links = [{
+    label: 'Week 2 Team',
+    url: 'week2/teamW2.html',
+}];
 const ol = document.getElementById('assignments');
 
 links.forEach(link => {
