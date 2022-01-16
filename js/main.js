@@ -26,6 +26,8 @@ links.forEach(link => {
     ol.appendChild(li);
 });
 
+//nav
+
 // Quiz Ninja Programing Basics
 /*const question = "What is Superman's real name?"
 const answer = prompt(question);
@@ -54,7 +56,7 @@ for(const [question,answer] of quiz){
 alert(`Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`);*/
 
 //Quiz Ninja Functions
-const quiz = [
+/*const quiz = [
     ["What is Superman's real name?","Clark Kent"],
     ["What is Wonder Woman's real name?","Diana Prince"],
     ["What is Batman's real name?","Bruce Wayne"]
@@ -90,4 +92,4 @@ function start(quiz){
         alert(`Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`);
     }
 }
-start(quiz);
+start(quiz);*/
