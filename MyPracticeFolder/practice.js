@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Array Cardio 💪</title>
-  </head>
-  <body>
-    <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
-    <script>
       // Get your shorts on - this is an array workout!
       // ## Array Cardio Day 1
 
@@ -73,9 +64,22 @@
 
       // Array.prototype.filter()
       // 1. Filter the list of inventors for those who were born in the 1500's
+      
+     /* const fifteen = inventors.filter(function(inventor){
+        if(inventor.year >= 1500 && inventor.year< 1600){
+        return true;
+    }
+    });*/
+
+    //const fifteen = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
+
+    //console.table(fifteen);
 
       // Array.prototype.map()
       // 2. Give us an array of the inventors' first and last names
+
+
+
 
       // Array.prototype.sort()
       // 3. Sort the inventors by birthdate, oldest to youngest
@@ -112,6 +116,3 @@
         'car',
         'truck'
       ];
-    </script>
-  </body>
-</html>
