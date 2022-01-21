@@ -88,6 +88,8 @@ const game = {
     start(quiz){
         this.questions = [...quiz];
         this.score = 0;
+        view.hide(view.start);//added in Chpt:7
+        view.show(view.start);//added in Chpt:7
         // main game loop
         for(const question of this.questions){
         this.question = question;
@@ -121,9 +123,6 @@ const game = {
 }
 
 game.start(quiz);
-view.hide(view.start);//added in Chpt:7
-view.show(view.start);//added in Chpt:7
-
 
 view.start.addEventListener('click', () => game.start(quiz), false); //added in Chpt:7
 
