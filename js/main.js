@@ -18,7 +18,16 @@ const links = [{
 {
     label: 'Week 3 Notes',
     url: 'week3/week3.html',
-}];
+},
+{
+    label: 'Week 4 Team',
+    url: 'week4/teamWeek04.html',
+},
+{
+    label: 'Week 4 Notes',
+    url: 'week4/week4.html',
+}
+];
 
 
 const ol = document.getElementById('assignments');
