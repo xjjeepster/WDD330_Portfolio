@@ -1,6 +1,6 @@
 
 
-const url = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/questions.json';
+/*const url = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/questions.json';
 
 import { view, game } from './quiz.js';
 
