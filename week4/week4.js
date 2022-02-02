@@ -133,4 +133,4 @@ const game = {
     }
     return localStorage.getItem('highScore');
   }
-}
+}*/
