@@ -1,0 +1,1 @@
+const myhike = new hikeList('hikes');
