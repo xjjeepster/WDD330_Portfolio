@@ -30,7 +30,16 @@ const links = [{
 {
     label: 'Week 5 Notes',
     url: 'week5/week5.html',
+},
+{
+    label: 'ToDo',
+    url: 'todo/index.html',
+},
+{
+    label: 'repository',
+    url: 'https://github.com/xjjeepster/WDD330_Portfolio',
 }
+
 ];
 
 
