@@ -6,7 +6,7 @@ class Todo_Class {
     } 
 
     add() {
-        const todoInput = document.querySelector("#myInput").value;
+        const todoInput = document.querySelector("#ToDoInput").value;
         if (todoInput == "") {
             alert("You did not enter any item!") 
         } else {
@@ -18,12 +18,13 @@ class Todo_Class {
 
         todoObjectList.unshift(todoObject);
         this.display();
-        document.querySelector("#myInput").value = '';
+        document.querySelector("#ToDoInput").value = '';
         console.log(todoObjectList);
 
         }
     }
 
+    // Not working currently!
     sort(todoObjectList) {
       
       todoObjectList.sort((a, b) => (a.isDone > b.isDone) ? 1 : -1);
@@ -100,7 +101,7 @@ document.querySelector(".sortBtn").addEventListener("click", function() {
   myTodoList.sort()
 })
 
-document.querySelector("#myInput").addEventListener("keydown", function(e) {
+document.querySelector("#ToDoInput").addEventListener("keydown", function(e) {
     if (e.keyCode == 13) {
         myTodoList.add()
     }
