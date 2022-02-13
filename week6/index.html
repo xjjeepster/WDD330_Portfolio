@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/29ee0bc57e.js" crossorigin="anonymous"></script>
     <title>ToDo List</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div id="myDIV" class="header">
-        <h2>My To Do List</h2>
-        <input type="text" id="addTask" placeholder="Task...">
-        <span onclick="newElement()" class="addBtn">Add</span>
-      </div>
-      
-      <ul id="toDoUL">
-        <li>Wash the Car</li>
-        <li>Buy Milk</li>
-        <li>Buy eggs</li>
-        <li>Rotate Tires</li>
-      </ul>
-      <script src="js/main.js"></script>
+  <header>
+    <h1>To Do List</h1>
+    <input type="text" id="myInput" placeholder="Things to be done..." />
+    <span class="addBtn" id="add_button">Add</span><span class="sortBtn" id="sort_button">Sort</span>
+  </header>
+  <h2>Click on item when complete</h2>
+  <ul id="myUL">
+    
+  </ul>
+  
+  <script src="js/main.js"></script>
 </body>
 </html>
+
