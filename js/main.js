@@ -38,9 +38,7 @@ const links = [{
 {
     label: 'repository',
     url: 'https://github.com/xjjeepster/WDD330_Portfolio',
-}
-
-];
+}];
 
 
 const ol = document.getElementById('assignments');
