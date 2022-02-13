@@ -1,59 +1,107 @@
-// Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
+const todoObjectList = [];
 
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
-}
+class Todo_Class {
+    constructor(item){
+        this.ulElement =item;
+    } 
 
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
+    add() {
+        const todoInput = document.querySelector("#myInput").value;
+        if (todoInput == "") {
+            alert("You did not enter any item!") 
+        } else {
+            const todoObject = {
+                id : todoObjectList.length,
+                todoText : todoInput,
+                isDone : false,
+            }
 
-// Create a new list item when clicking on the "Add" button
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("addTask").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("toDoUL").appendChild(li);
-  }
-  document.getElementById("addTask").value = "";
+        todoObjectList.unshift(todoObject);
+        this.display();
+        document.querySelector("#myInput").value = '';
+        console.log(todoObjectList);
 
-  console.log(toDoUL);
-
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
+        }
     }
-  }
-}
 
-//Filter Tasks
+    sort(todoObjectList) {
+      
+      todoObjectList.sort((a, b) => (a.isDone > b.isDone) ? 1 : -1);
+     
+    }
+
+    done_undone(x) {
+        const selectedTodoIndex = todoObjectList.findIndex((item)=> item.id == x);
+        console.log(todoObjectList[selectedTodoIndex].isDone);
+        todoObjectList[selectedTodoIndex].isDone == false ? todoObjectList[selectedTodoIndex].isDone = true : todoObjectList[selectedTodoIndex].isDone = false;
+        this.display();
+    }
+
+    deleteElement(z) {
+        const selectedDelIndex = todoObjectList.findIndex((item)=> item.id == z);
+
+        todoObjectList.splice(selectedDelIndex,1);
+
+        this.display();
+    }
+
+
+    display() {
+        this.ulElement.innerHTML = "";
+
+        todoObjectList.forEach((object_item) => {
+
+          
+            const liElement = document.createElement("li");
+            const delBtn = document.createElement("i");
+
+            liElement.innerText = object_item.todoText;
+            liElement.setAttribute("data-id", object_item.id);
+
+            delBtn.setAttribute("data-id", object_item.id);
+            delBtn.classList.add("far", "fa-trash-alt");
+
+            liElement.appendChild(delBtn);
+            
+            delBtn.addEventListener("click", function(e) {
+                const deleteId = e.target.getAttribute("data-id");
+                myTodoList.deleteElement(deleteId);
+            })
+            
+            liElement.addEventListener("click", function(e) {
+                const selectedId = e.target.getAttribute("data-id");
+                myTodoList.done_undone(selectedId);
+            })
+
+            if (object_item.isDone) {
+                liElement.classList.add("checked");
+            }
+
+            this.ulElement.appendChild(liElement);
+
+        })
+
+        
+
+        
+    }
+    
+} 
+
+const listSection = document.querySelector("#myUL");
+
+myTodoList = new Todo_Class(listSection);
+
+
+document.querySelector(".addBtn").addEventListener("click", function() {
+    myTodoList.add()
+})
+document.querySelector(".sortBtn").addEventListener("click", function() {
+  myTodoList.sort()
+})
+
+document.querySelector("#myInput").addEventListener("keydown", function(e) {
+    if (e.keyCode == 13) {
+        myTodoList.add()
+    }
+})
