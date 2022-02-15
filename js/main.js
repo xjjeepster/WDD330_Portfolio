@@ -37,7 +37,7 @@ const links = [{
 },
 {
     label: 'Week 7 Notes',
-    url: 'week7/index.html',
+    url: 'week7/week7.html',
 },
 {
     label: 'repository',
