@@ -42,6 +42,10 @@ const links = [{
 {
     label: 'repository',
     url: 'https://github.com/xjjeepster/WDD330_Portfolio',
+},
+{
+    label: 'Week 8 Notes',
+    url: 'week8/week8.html',
 }];
 
 

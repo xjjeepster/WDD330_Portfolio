@@ -24,11 +24,30 @@
     <h2>WDD 330 Portfolio</h2>
 
     <h3>Notes:</h3>
-    <p>
+    <p>The translate(x,y) function moves an element x from the left, and y from the top: (transform: translate(45px, -45px);)
+      Transform does require vendor prefixing for IE9 and iOS8.  You can also use translateX or translateY if only wanting to move 
+      vertically or horizontally.
+      You can use scale to scale an object up or down.  (transform: scale(1.5, 0.25);) scale(1) would leave an element the same size.
+      (transform: rotate(10deg);) Rotate will adjust the rotation.  (transform: skew(15deg, 4deg);) will skew perspective.
     </p>
-    <p>
+    <p>Transitions are a way to animate objects with css rather than using javascript.  You can use a transition-duration to set how
+      long the animation goes. <br>
+      Animations will still need prefix's.
     </p>
-    <p> 
+    <p> The first step to using canvas is to add a canvas element to the page: <br>
+      &lt;canvas id="myCanvas" class="myCanvas" width="200" height="200"><br>
+        Sorry! Your browser doesn’t support Canvas.<br>
+      &gt;/canvas><br>
+      The text in between the canvas tags will only show if canvis is not supported. the code below will create a rectangle. <br>
+        var canvas = document.getElementById("myCanvas"); <br>
+        var context = canvas.getContext("2d"); <br>
+        context.strokeStyle = "red";<br>
+        context.fillStyle = "rgba(0, 0, 255, 0.5)";<br>
+        context.fillRect(10, 10, 100, 100);   <br>
+        context.strokeRect(10, 10, 100, 100);<br>
+      SVG are scalable vector graphics.  <br>
+      API's allow you to make interactive elements.  One example is the drag and drop.  This allows you to drag an element around 
+      the page. 
     </p>
 
     <h3>Questions:</h3>
