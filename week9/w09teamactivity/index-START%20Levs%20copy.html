@@ -9,39 +9,39 @@
 
 
   <div class="keys">
-    <div data-key="65" class="key">
-      <kbd>A</kbd>
+    <div data-key="65" class="key" value="0">
+      <kbd aria-valuenow="0">A</kbd>
       <span class="sound">clap</span>
     </div>
-    <div data-key="83" class="key">
-      <kbd>S</kbd>
+    <div data-key="83" class="key" value="0">
+      <kbd aria-valuenow="0">S</kbd>
       <span class="sound">hihat</span>
     </div>
-    <div data-key="68" class="key">
-      <kbd>D</kbd>
+    <div data-key="68" class="key" value="0">
+      <kbd aria-valuenow="0">D</kbd>
       <span class="sound">kick</span>
     </div>
-    <div data-key="70" class="key">
+    <div data-key="70" class="key" value="0">
       <kbd>F</kbd>
       <span class="sound">openhat</span>
     </div>
-    <div data-key="71" class="key">
+    <div data-key="71" class="key" value="0">
       <kbd>G</kbd>
       <span class="sound">boom</span>
     </div>
-    <div data-key="72" class="key">
+    <div data-key="72" class="key" value="0">
       <kbd>H</kbd>
       <span class="sound">ride</span>
     </div>
-    <div data-key="74" class="key">
+    <div data-key="74" class="key" value="0">
       <kbd>J</kbd>
       <span class="sound">snare</span>
     </div>
-    <div data-key="75" class="key">
+    <div data-key="75" class="key" value="0">
       <kbd>K</kbd>
       <span class="sound">tom</span>
     </div>
-    <div data-key="76" class="key">
+    <div data-key="76" class="key" value="0">
       <kbd>L</kbd>
       <span class="sound">tink</span>
     </div>
@@ -67,57 +67,40 @@ function playSound(e) {
   audio.currentTime = 0; //stops current audio track when new button is pressed.
   audio.play();
   key.classList.add('playing'); //adds playing class to elements for css
-
-  
 }
 
 //trying to get keys to move each time key pressed
-/*function moveItem(e) {
+function moveItem(e) {
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-  let location = key.getBoundingClientRect();
-  console.log(location);
-  let newY = 10;
-  console.log(newY);
+  const numTransition = parseInt(key.childNodes[1].ariaValueNow);
 
-  key.style.transform = `translateY(${newY}px)`;
-}*/
+  console.log(key.childNodes[1].ariaValueNow);
+  if (numTransition >= 0 && (numTransition < 10)) {
+    key.style.transform = `translateY(${((numTransition + 1) * 10)}px)`;
+    console.log(toString(numTransition + 1));
+    key.childNodes[1].ariaValueNow = `${numTransition + 1}`;
+  }
+  else if (numTransition >= 10) {
+    key.style.transform = `translateY(0px)`;
+    key.childNodes[1].ariaValueNow = "0";
+  }
+}
 
 
 function removeTransition(e) {
-  if (e.propertyName !== 'transform') return;
+  //if (e.propertyName !== 'transform') return;
   this.classList.remove('playing');
 }
 
 const keys = document.querySelectorAll('.key');
-keys.forEach(key => key.addEventListener('transitionend', removeTransition))
+keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 window.addEventListener('keydown', playSound);
-let amount = 10;
-let initial = 0;
-let count = 0;
-window.addEventListener('keyup', (e) => {
-  let geez = '';
-  if(count == 0) {
-    const loc = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-    let data = loc.getBoundingClientRect();
-    console.log(data)
-    geez = data.y;
-
-  }
-  count++;
-  initial += amount;
-  if(count < 10) {
-    const test = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-    test.style.transform = `translateY(${initial}px)`;
-  }else {
-    const test = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-    test.style.transform = `translateY(0px)`;
-    count = 0;
-  }
-});
+window.addEventListener('keydown', moveItem);
 
 
 
 </script>
+
 
 </body>
 </html>
