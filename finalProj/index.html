@@ -4,12 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bored API Activity Search</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <form>
-        
-    </form>
+    <h1>Activity Generator</h1>
+    <h2>Powered by BoredAPI</h2>
+    <h3>https://www.boredapi.com/</h3>
+<h3 class="activity"></h3>
+<p class="type small"></p>
+    <main>
+        <div class="cards"></div>
+        <section class="all-containers">
+            <div id="type-container"></div>
+            <div id="default-container">
+                <div id="emptyCard">
+                    <h2>Let's Find an Activity!</h2>
+                </div>
+            </div>
+            <div id="participants-container"></div>
+        </section>
+
+        <section class="dropdowns">
+            <div>
+                <label for="acivity-type-select">Type of Activity:</label>
+                <select id="activity-type">
+                    <option value="">--Select--</option>
+                    <option value="education">Education</option>
+                    <option value="recreational">Recreation</option>
+                    <option value="social">Social</option>
+                    <option value="diy">Diy (Do it yourself)</option>
+                    <option value="charity">Charity</option>
+                    <option value="cooking">Cooking</option>
+                    <option value="relaxation">Relaxation</option>
+                    <option value="music">Music</option>
+                    <option value="busywork">Busywork</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="number-people-select">How many people:</label>
+                <select id="number-of-people">
+                    <option value="">--Select--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="8">8</option>              
+                </select>
+            </div>
+        </section>
+
+    <section class="buttons"> 
+        <div id="type-button-parent">
+            <button id="type-button" type="button">
+                Get Activity
+             </button>
+        </div>
+        <button id="default-button" type="button">
+            Random Activity
+        </button>
+        <button id="people-button" type="button">
+            Get Activity
+        </button>
+    </section>
+    </main>
+
     
+    <script src="./bored.js"></script>
+
 </body>
 </html>

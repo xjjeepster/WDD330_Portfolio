@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&family=Poppins:wght@300;700&family=Rowdies&display=swap");
+body {
+  margin: 0;
+  font-family: "Rowdies", cursive;
+  font-size: 18pt;
+  background: linear-gradient(135deg, #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%);
+  text-align: center;
+}
+
+.description {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+.all-containers {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 4px;
+  grid-auto-flow: column;
+}
+
+.dropdowns {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 340px;
+  grid-auto-flow: column;
+  font-size: 14pt;
+}
+
+.buttons {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 205px;
+  grid-auto-flow: column;
+  margin-top: 20px;
+  font-size: 12pt;
+}
+
+#type-button, #default-button, #people-button {
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: white;
+  background-color: #4eb5f1;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+#type-button {
+  background-color: #cd2f24;
+}
+
+#people-button {
+  background-color: #00FF0F;
+}
+
+#card1, #card2, #card3, #emptyCard {
+  font-size: 13pt;
+  text-align: center;
+  border: grey solid 1px;
+  border-radius: 0 25px;
+  padding: 0rem;
+  width: 15rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
+  box-shadow: 3px 4px #040405;
+  background-color: #fbfeff;
+}
+
+#card1 {
+  box-shadow: 3px 4px #cd2f24;
+  background-color: #d26e67;
+}
+
+#card2 {
+  box-shadow: 3px 4px #339fe7;
+  background-color: #93c9ed;
+}
+#card2 p {
+  line-height: 1px;
+  margin: 2px 0;
+}
+
+#card3 {
+  box-shadow: 3px 4px #00FF0F;
+  background-color: #9af09f;
+}
+#card3 p {
+  line-height: 1px;
+  margin: 2px 0;
+}
+
+#card > p {
+  line-height: 1px;
+  margin: 2px 0;
+}
+
+/*# sourceMappingURL=styles.css.map */
