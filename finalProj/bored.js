@@ -1,5 +1,5 @@
 
-const baseURL = "http://www.boredapi.com/api/activity"
+const baseURL = "https://www.boredapi.com/api/activity"
 const randomType = "?type="
 const participantsNeeded = "?participants="
 const baseCard = document.getElementById('emptyCard')
